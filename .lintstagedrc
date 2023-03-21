@@ -1,0 +1,4 @@
+{
+  "src/**/*.+(js|ts|tsx)": ["eslint"],
+  "src/**/*.styled.+(js|ts|tsx)": ["stylelint"],
+}

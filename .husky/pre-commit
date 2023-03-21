@@ -1,0 +1,14 @@
+#!/bin/sh
+
+PACKAGE_COMMAND=yarn
+
+if
+  ! command -v PACKAGE_COMMAND &
+  >/dev/null
+then
+  PACKAGE_COMMAND='npm run'
+fi
+
+. "$(dirname "$0")/_/husky.sh"
+
+$PACKAGE_COMMAND pre-commit
