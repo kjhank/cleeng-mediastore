@@ -1,56 +1,31 @@
-import { useState } from 'react';
-import { Theme } from '@/theme';
-import logo from './logo.svg';
 import {
-  Header, Link, Logo, Wrapper,
-} from './App.styled';
+  Config, store,
+  // @ts-ignore
+} from '@cleeng/mediastore-sdk';
+import { Providers } from './features';
+import {
+  cleengEnvironment, cleengOfferId, cleengPublisherId,
+} from './static';
+import { getUrl } from './utils';
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  Config.setEnvironment(cleengEnvironment);
+  Config.setPublisher(cleengPublisherId);
+  Config.setOffer(cleengOfferId);
+  Config.setMyAccountUrl(getUrl('acc'));
+  Config.setCheckoutPayPalUrls({
+    cancelUrl: getUrl('components').href,
+    errorUrl: getUrl('components').href,
+    successUrl: getUrl('components').href,
+  });
+  Config.setMyAccountPayPalUrls({
+    cancelUrl: getUrl('account').href,
+    errorUrl: getUrl('account').href,
+    successUrl: getUrl('account').href,
+  });
 
   return (
-    <Theme>
-      <Wrapper>
-        <Header>
-          <Logo
-            alt="logo" className="App-logo"
-            src={logo}
-          />
-          <p>Hello Vite + React!</p>
-          <p>
-            <button onClick={() => setCount(current => current + 1)} type="button">
-              count is:
-              {' '}
-              {count}
-            </button>
-          </p>
-          <p>
-            Edit
-            {' '}
-            <code>App.tsx</code>
-            {' '}
-            and save to test HMR updates.
-          </p>
-          <p>
-            <Link
-              href="https://reactjs.org"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Learn React
-            </Link>
-            {' | '}
-            <Link
-              href="https://vitejs.dev/guide/features.html"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Vite Docs
-            </Link>
-          </p>
-        </Header>
-      </Wrapper>
-    </Theme>
+    <Providers store={store} />
   );
 };
 
