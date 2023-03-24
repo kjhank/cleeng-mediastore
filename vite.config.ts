@@ -10,8 +10,6 @@ export default defineConfig(({ mode }) => {
   const envs = loadEnv(mode, process.cwd(), '');
   const appUrl = new URL(envs.VITE_APP_URL);
 
-  console.log(appUrl);
-
   return ({
     define: {
       'import.meta.env.APP_PORT': appUrl.port,
@@ -20,7 +18,7 @@ export default defineConfig(({ mode }) => {
       react(),
       eslintPlugin(),
       StylelintPlugin({ include: ['styled.ts', 'tsx'] }),
-      tsconfigPaths()
+      tsconfigPaths(),
     ]
   });
 });

@@ -12,7 +12,7 @@ const App = () => {
   Config.setEnvironment(cleengEnvironment);
   Config.setPublisher(cleengPublisherId);
   Config.setOffer(cleengOfferId);
-  Config.setMyAccountUrl(getUrl('acc'));
+  Config.setMyAccountUrl(getUrl('account'));
   Config.setCheckoutPayPalUrls({
     cancelUrl: getUrl('components').href,
     errorUrl: getUrl('components').href,

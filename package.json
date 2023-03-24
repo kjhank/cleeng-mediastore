@@ -11,6 +11,7 @@
     "pre-commit": "lint-staged",
     "prepare": "husky install",
     "preview": "vite preview",
+    "reset-sdk": "npm remove @cleeng/mediastore-sdk && yalc add @cleeng/mediastore-sdk && npm install",
     "type-check": "tsc --pretty --noEmit",
     "postinstall": "husky install"
   },
@@ -18,7 +19,8 @@
     "@cleeng/mediastore-sdk": "file:.yalc/@cleeng/mediastore-sdk",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.0.5",
+    "react-markdown": "^8.0.6",
+    "react-redux": "^7.2.9",
     "react-router-dom": "^6.9.0",
     "styled-components": "^5.3.9"
   },

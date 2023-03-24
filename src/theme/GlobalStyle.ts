@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
   body {
     color: ${({ theme }) => theme.getColor()};
-    font-family: ${({ theme }) => theme.getFont()};
+    /* font-family: ${({ theme }) => theme.getFont()}; */
   }
 
   button[class] {

@@ -152,8 +152,9 @@ export const Reset = createGlobalStyle`
     text-decoration: inherit;
   }
 
-  a:not([class]) {
+  a[href]:not([class]) {
     text-decoration-skip-ink: auto;
+    text-decoration: revert;
   }
 
   img {

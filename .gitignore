@@ -13,6 +13,8 @@ dist-ssr
 *.local
 
 .env*
+.yalc
+yalc.lock
 !.env.example
 
 # Editor directories and files

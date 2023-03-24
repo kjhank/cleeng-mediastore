@@ -1,5 +1,4 @@
 /* eslint-disable sort-keys */
-import React from 'react';
 import styled, { DefaultTheme, ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './GlobalStyle';
 
